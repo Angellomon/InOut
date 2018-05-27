@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends "App/base.html" %}
+
+{% block titulo %}
+<title>Resultado</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="jumbotron">
+  <h1 class="display-4">Resultado</h1>
+  <p class="lead">A continuación se desliega el resultado</p>
+  <h2>{{ resultado }}%</h2>
+</div>
+{% endblock contenido %}

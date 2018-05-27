@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% extends "App/base.html" %}
+
+{% block titulo %}
+<title>Consulta</title>
+{% endblock titulo %}
+
+{% block contenido %}
+<div class="jumbotron">
+  <h4 class="display-4">Consulta de predicción</h4>
+  <p class="lead">Aqui podrás consultar las posibilidades de que una carta salga o entre</p>
+  <div class="row">
+    <div class="col-md-6 col-12">
+      <h2>Live Items</h2>
+      <p class="lead">Seleccionar:</p>
+      <form method="POST">
+        {% csrf_token %}
+        {{ sel_live.as_p }}
+        <input type="submit" class="btn btn-outline-secondary" name="sel-li">
+      </form>
+    </div>
+    <div class="col-md-6 col-12">
+      <h2>Banned Items</h2>
+      <p class="lead">Seleccionar:</p>
+      <form method="post">
+        {% csrf_token %}
+        {{ sel_banned.as_p }}
+        <input type="submit" class="btn btn-outline-secondary" name="sel-ban">
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 col-12">
+      <h2>Live Items</h2>
+      <p class="lead">Favor de rellenar los campos:</p>
+      <form method="POST">
+        {% csrf_token %}
+        {{ form_live.as_p }}
+        <input type="submit" class="btn btn-outline-secondary" name="form-li">
+      </form>
+    </div>
+    <div class="col-md-6 col-12">
+      <h2>Banned Items</h2>
+      <p class="lead">Favor de rellenar los campos:</p>
+      <form method="POST">
+        {% csrf_token %}
+        {{ form_banned.as_p }}
+        <input type="submit" class="btn btn-outline-secondary" name="form-ban">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock contenido %}
