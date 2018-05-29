@@ -2,7 +2,7 @@ import tensorflow as tf
 import json
 import time
 
-datos = json.load(open('datos/BannedCards.json', 'r'))
+datos = json.load(open('static/datos/BannedCards.json', 'r'))
 
 X = datos['inputs']
 Y = datos['outs']
